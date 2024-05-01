@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review Sentiment Predictor</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Review Sentiment Predictor</h1>
+        <form method="post" action="/predict" class="form">
+            <label for="text">Review</label><br>
+            <input type="text" name="text" id="text" placeholder="{{ input_text }}"><br><br>
+            <input type="submit" value="Predict" class="btn">
+        </form>
+        {% if sentiment %}
+            <p class="prediction"><strong>Sentiment Prediction:</strong> {{ sentiment }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
